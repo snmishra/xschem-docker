@@ -3,7 +3,7 @@
 %global rpm_has_recommends    %(rpm --version | awk -e '{print ($3 > 4.12)}')
 #
 Name:           xschem
-Version:        2.9.0
+Version:        2.9.2
 Release:        1%{?dist}
 Summary:        Schematic capture and Netlisting EDA tool
 
@@ -75,6 +75,9 @@ Documentation for %{name}.
 
 
 %changelog
+* Sun Jul 21 2019 Alain <alain DOT vigne DOT 14 AT gmail DOT com> - 2.9.2-1
+- Upstream new release
+
 * Sun Jul 14 2019 Alain <alain DOT vigne DOT 14 AT gmail DOT com> - 2.9.0-1
 - Upstream new release
 
