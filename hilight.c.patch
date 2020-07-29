@@ -1,0 +1,20 @@
+--- a/src/hilight.c	2020-06-27 22:47:39.000000000 +0000
++++ b/src/hilight.c	2020-07-29 03:15:55.026698902 +0000
+@@ -109,7 +109,7 @@
+         if(viewer == NGSPICE) {
+           if(idx > 9) {
+             idx = 2;
+-            fprintf(fd, str);
++            fprintf(fd, "%s", str);
+             fprintf(fd, "\n");
+             first = 1;
+             my_free(&str);
+@@ -152,7 +152,7 @@
+     }
+   }
+   if(viewer == NGSPICE) {
+-    fprintf(fd, str);
++    fprintf(fd, "%s", str);
+     fprintf(fd, "\n.endc\n");
+     my_free(&str);
+   }

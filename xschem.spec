@@ -3,13 +3,14 @@
 %global rpm_has_recommends    %(rpm --version | awk -e '{print ($3 > 4.12)}')
 #
 Name:           xschem
-Version:        2.9.2
-Release:        3%{?dist}
+Version:        2.9.7
+Release:        1%{?dist}
 Summary:        Schematic capture and Netlisting EDA tool
 
 License:        GPLv2+
 URL:            http://repo.hu/projects/xschem
 Source0:        http://repo.hu/projects/xschem/releases/xschem-%{version}.tar.gz
+Patch0: 	    hilight.c.patch
 
 BuildRequires:  gcc
 BuildRequires:  gawk
@@ -49,7 +50,7 @@ Documentation for %{name}.
 
 
 %prep
-%autosetup
+%autosetup -p1
 
 
 %build
@@ -66,6 +67,7 @@ Documentation for %{name}.
 %license COPYING
 %doc AUTHORS Changelog LICENSE README
 %{_bindir}/%{name}
+%{_bindir}/rawtovcd
 %{_datadir}/%{name}
 %{_mandir}/man1/xschem.1*
 
